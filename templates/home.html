@@ -10,31 +10,46 @@
     <title>Carrer Openings</title>
     <style>
       #banner{
-        width: 100%
+        width: 100%;
+        margin-bottom:20px  
       }
     </style>
   </head>
   
   <body>
+    {% include 'nav_bar.html' %}
+
+      <img class='img-fluid' id='banner' src="static/zest-tea-f74VtF6ZQdw-unsplash (1).jpg" alt="">
+    
     <div class='container'>
         <h1 class='text-center mt-2 mb-4'>Strive Preparations Carrer</h1>
-        <img class='img-fluid' id='banner' src="static/zest-tea-f74VtF6ZQdw-unsplash (1).jpg" alt="">
-        <h2 class='text-center mt-2 mb-4'>About Strive</h2>
-        <p class='lead'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
-    
+
+        <h2 class='text-center mt-2 mb-4'>About Strivian Career's</h2>        
+
+          <div class='row'>
+            <div class='col-md-6'>
+            <p class='lead'>At Strivian, we are passionate about empowering young individuals to reach their full potential in the tech world. We believe in fostering a supportive and inclusive environment where everyone has the opportunity to thrive. Our dedicated team of experts provides tailored guidance, mentorship, and practical training to equip you with the skills and knowledge needed to succeed in your chosen career path.</p>
+            </div>
+            <div class='d-none d-md-block col-6'>
+              <img src="static/samsung-memory-AoDMssi2UOU-unsplash.jpg" style='height:360px' alt="img">
+            </div>    
+          </div>
+            
         <h2 class='text-center mt-2 mb-4'>Open Position's</h2>
 
         <div>
           {% for job in jobs %}
               {% include 'list_item.html' %}
-          {% endfor %}
+          {% endfor %} 
         </div>
 
       
         <div class='text-center'>
-          <button class='btn btn-primary btn-lg'>Contact Us</button>
-          <p class='mt-4  '>Copy right 2024, strive preparations</p>
+          <a href="mailto:strivian@gmail.com?subject=Application%20For{{job['title']}}&body=My%20Name%3A%20%3Cyour_name%3E%0D%0AMy%20Resume%20Link%3A%20%3Cresume_link%3E%0D%0AMy%20Linkdin%3B%20%3Cmy_linkdin%3E" class='btn btn-primary btn-lg'>Contact Us</a>
+          
           </div>
         </div>
+
+        {% include 'footer.html' %}
   </body>
 </html>
